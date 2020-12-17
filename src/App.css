@@ -41,3 +41,10 @@
   background-color: salmon;
   color: gray;
 }
+
+.App-users {
+  display: flex;
+}
+.App-user {
+  flex: 1;
+}
