@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import APIFetching from '../APIFetching';
 import Example1 from '../ExampleJSX';
 import Example from '../ExampleJSX/Example';
 import Lifecycle from '../Lifecycle';
@@ -24,6 +25,9 @@ function Routing() {
           </Route>
           <Route path="/users">
             <UsersExample />
+          </Route>
+          <Route path="/api">
+            <APIFetching />
           </Route>
         </Switch>
       </HashRouter>

@@ -17,6 +17,9 @@ function Menu() {
         <li>
           <Link to="/users">Users</Link>
         </li>
+        <li>
+          <Link to="/api">Fetch data</Link>
+        </li>
       </ul>
     </div>
   );

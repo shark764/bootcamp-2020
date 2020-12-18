@@ -48,3 +48,36 @@
 .App-user {
   flex: 1;
 }
+
+ul li {
+  list-style: none;
+  display: inline;
+  margin: 15px;
+}
+
+table tr th {
+  border: #282c34 2px solid;
+}
+table tr td {
+  border: gray 1px solid;
+}
+
+main {
+  margin: 20px;
+}
+
+.App-form-users {
+  margin: 20px;
+  display: flex;
+}
+.App-box {
+  padding: 10px;
+  margin: 10px;
+}
+
+input,
+button,
+select {
+  font-size: 18px;
+  padding: 15px;
+}
