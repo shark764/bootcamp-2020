@@ -32,6 +32,11 @@ function Form() {
     });
   };
 
+  const a = { data: 1, code: 2 };
+  const b = { res: 'hola', code: 200 };
+  const merged = { ...a, ...b };
+  console.log({ merged });
+
   const putUser = async (payload) => {
     const response = await Axios.put(
       `https://gorest.co.in/public-api/users/${current.id}`,
