@@ -1,3 +1,4 @@
+import { Box } from 'grommet';
 import React from 'react';
 import UsersProvider from './Context';
 import Form from './Form';
@@ -5,12 +6,12 @@ import List from './List';
 
 function APIFetching() {
   return (
-    <div className="App-form-users">
-      <UsersProvider>
+    <UsersProvider>
+      <Box direction="row" pad="medium" gap="medium">
         <List />
         <Form />
-      </UsersProvider>
-    </div>
+      </Box>
+    </UsersProvider>
   );
 }
 

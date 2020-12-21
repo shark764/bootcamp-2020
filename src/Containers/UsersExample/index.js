@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchProvider from './Context';
 import List from './List';
 import Search from './Search';

@@ -1,7 +1,8 @@
 import Axios from 'axios';
+import { Box } from 'grommet';
 import React, { useContext } from 'react';
 import { UsersContext } from '../Context';
-import FormLayout from './FormLayout';
+import FormLayout from './FormGrommet';
 
 const token =
   '6cabfd3fc1aa17546fbfac4e0796907906638b74fe780efebf1eb803baa1e31c';
@@ -79,13 +80,13 @@ function Form() {
   };
 
   return (
-    <div className="App-box">
+    <Box pad="medium" elevation="medium" gap="small" width="large">
       <FormLayout
         onSubmit={onSubmit}
         key={current.id}
         currentValues={current}
       />
-    </div>
+    </Box>
   );
 }
 

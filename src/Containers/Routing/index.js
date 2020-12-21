@@ -9,29 +9,23 @@ import Menu from './Menu';
 
 function Routing() {
   return (
-    <div>
-      <HashRouter>
-        <Menu />
-
-        <Switch>
-          <Route exact path="/">
-            <Example />
-          </Route>
-          <Route path="/jsx">
-            <Example1 />
-          </Route>
-          <Route path="/lifecycle">
-            <Lifecycle />
-          </Route>
-          <Route path="/users">
-            <UsersExample />
-          </Route>
-          <Route path="/api">
-            <APIFetching />
-          </Route>
-        </Switch>
-      </HashRouter>
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <Example />
+      </Route>
+      <Route path="/jsx">
+        <Example1 />
+      </Route>
+      <Route path="/lifecycle">
+        <Lifecycle />
+      </Route>
+      <Route path="/users">
+        <UsersExample />
+      </Route>
+      <Route path="/api">
+        <APIFetching />
+      </Route>
+    </Switch>
   );
 }
 
