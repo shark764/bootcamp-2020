@@ -71,7 +71,7 @@ function List() {
         <TextInput
           type="number"
           value={page}
-          onChange={(event) => setPage(event.target.value)}
+          onChange={(event) => setPage(parseInt(event.target.value, 10))}
           icon={<Search />}
         />
 

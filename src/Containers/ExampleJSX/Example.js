@@ -1,7 +1,10 @@
+import { Text } from 'grommet';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Example(props) {
   const [value, setValue] = useState(true);
+  const counter = useSelector((state) => state.example.counter);
 
   return (
     <div>
@@ -24,6 +27,8 @@ function Example(props) {
       >
         Shared
       </button>
+
+      <Text color="accent-1">El numero es {counter}</Text>
 
       {/* <ExampleInterno value={props.value} /> */}
     </div>
