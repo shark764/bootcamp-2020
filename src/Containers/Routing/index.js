@@ -4,6 +4,7 @@ import APIFetching from '../APIFetching';
 import Example1 from '../ExampleJSX';
 import Example from '../ExampleJSX/Example';
 import Lifecycle from '../Lifecycle';
+import ReduxToolkitExample from '../ReduxToolkitExample';
 import UsersExample from '../UsersExample';
 import Menu from './Menu';
 
@@ -24,6 +25,9 @@ function Routing() {
       </Route>
       <Route path="/api">
         <APIFetching />
+      </Route>
+      <Route path="/toolkit">
+        <ReduxToolkitExample />
       </Route>
     </Switch>
   );

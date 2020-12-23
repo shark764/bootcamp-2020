@@ -97,9 +97,9 @@ function App() {
       <HashRouter>
         <PageHeader />
         <Box pad="medium">
-          <Box pad="large">
+          {/* <Box pad="large">
             <ReduxExample />
-          </Box>
+          </Box> */}
 
           <Routing />
         </Box>
