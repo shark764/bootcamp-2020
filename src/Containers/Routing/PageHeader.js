@@ -4,6 +4,7 @@ import { DocumentStore, Group, Reactjs, Tools } from 'grommet-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setNewTheme } from '../../redux/actions';
+import { themes } from '../../utils';
 
 const links = [
   { label: 'Example', to: '/', icon: <Reactjs color="accent-2" /> },
@@ -40,15 +41,7 @@ function PageHeader(props) {
       <Box justify="end">
         <Select
           value={props.theme}
-          options={[
-            'light',
-            'dark',
-            'awsmcolor',
-            'monokai',
-            'warn-and-bold',
-            'elegant',
-            'vibrant',
-          ]}
+          options={Object.keys(themes)}
           onChange={({ option }) => props.setNewTheme(option)}
         />
       </Box>

@@ -1,35 +1,15 @@
 import Axios from 'axios';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { UsersContext } from '../Context';
-import Row from './Row';
-import styled, { css } from 'styled-components';
-import { ButtonAdd } from '../../../Components';
-import { Box, Button, DataTable, Text, TextInput } from 'grommet';
-import {
-  Actions,
-  FormClose,
-  FormEdit,
-  Search,
-  StatusCritical,
-  StatusGood,
-  User,
-  UserAdd,
-  UserFemale,
-} from 'grommet-icons';
-
-const token =
-  '6cabfd3fc1aa17546fbfac4e0796907906638b74fe780efebf1eb803baa1e31c';
-
-const ButtonAddV2 = styled(ButtonAdd)`
-  background-color: transparent;
-  font-family: arial;
-  border-radius: 8px;
-`;
+import { Box, Button, TextInput } from 'grommet';
+import { Search, UserAdd } from 'grommet-icons';
+import ListGrommet from './ListGrommet';
+import { gorestToken } from '../../../utils';
 
 function List() {
   const {
     users: [users, setUsers],
-    current: [current, setCurrent],
+    current: [, setCurrent],
   } = useContext(UsersContext);
   const [page, setPage] = useState(65);
 
@@ -53,7 +33,7 @@ function List() {
         headers: {
           Accept: 'application/json',
           'Content-type': 'application/json',
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${gorestToken}`,
         },
       }
     );
@@ -96,57 +76,10 @@ function List() {
         </ButtonAddV2> */}
       </Box>
 
-      <DataTable
-        columns={[
-          { property: 'id', primary: true, header: <Text>Id</Text> },
-          { property: 'name', header: <Text>Name</Text> },
-          { property: 'email', header: <Text>Email</Text> },
-          {
-            property: 'gender',
-            header: <Text>Gender</Text>,
-            render: (row) => {
-              return row.gender === 'Male' ? (
-                <User color="brand" />
-              ) : (
-                <UserFemale color="accent-2" />
-              );
-            },
-          },
-          {
-            property: 'status',
-            header: <Text>Status</Text>,
-            render: (row) => {
-              return row.status === 'Active' ? (
-                <StatusGood color="brand" />
-              ) : (
-                <StatusCritical color="accent-1" />
-              );
-            },
-          },
-          {
-            property: 'actions',
-            header: <Actions />,
-            render: (row) => {
-              return (
-                <Box direction="row">
-                  <Button
-                    type="button"
-                    onClick={() => setCurrent(row)}
-                    icon={<FormEdit color="brand" />}
-                    plain
-                  />
-                  <Button
-                    type="button"
-                    onClick={() => deleteUser(row.id)}
-                    icon={<FormClose color="accent-2" />}
-                    plain
-                  />
-                </Box>
-              );
-            },
-          },
-        ]}
-        data={users}
+      <ListGrommet
+        users={users}
+        setCurrent={setCurrent}
+        deleteUser={deleteUser}
       />
     </Box>
   );
