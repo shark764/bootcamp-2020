@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactQueryExample from '../ReactQueryExample';
 
 class Lifecycle extends Component {
   constructor(props) {
@@ -30,6 +31,8 @@ class Lifecycle extends Component {
         <p>{this.state.value * 5}</p>
         <p>{this.state.text.toUpperCase()}</p>
         <button onClick={() => this.setState({ value: 10000 })}>+</button>
+
+        <ReactQueryExample />
       </div>
     );
   }

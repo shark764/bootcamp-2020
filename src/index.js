@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
+import QueryProvider from './queryClient/QueryProvider';
 
 // ReactDOM.render(
 //   <div>
@@ -16,7 +17,9 @@ import store from './redux/store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <QueryProvider>
+        <App />
+      </QueryProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
