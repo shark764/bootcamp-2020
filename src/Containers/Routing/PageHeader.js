@@ -5,6 +5,7 @@ import {
   DocumentStore,
   GraphQl,
   Group,
+  Multimedia,
   Reactjs,
   Tools,
 } from 'grommet-icons';
@@ -26,6 +27,7 @@ const links = [
     to: '/contentful',
     icon: <CloudSoftware color="accent-2" />,
   },
+  { label: 'Movies', to: '/movies', icon: <Multimedia color="accent-2" /> },
 ];
 
 function PageHeader(props) {

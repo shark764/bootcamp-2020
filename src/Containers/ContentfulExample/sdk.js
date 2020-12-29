@@ -24,7 +24,7 @@ export function getEntries() {
       content_type: CONTENT_TYPE,
     })
     .then((result) => {
-      log('info', result.items);
+      log('info', 'Data retrieved from contentful', result.items);
       return result.items;
     })
     .then((items) => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import APIFetching from '../APIFetching';
 import ContentfulExample from '../ContentfulExample';
+import ContentfulMoviesExample from '../ContentfulMoviesExample';
 import Example1 from '../ExampleJSX';
 import Example from '../ExampleJSX/Example';
 import Lifecycle from '../Lifecycle';
@@ -36,6 +37,9 @@ function Routing() {
       </Route>
       <Route path="/contentful">
         <ContentfulExample />
+      </Route>
+      <Route path="/movies">
+        <ContentfulMoviesExample />
       </Route>
     </Switch>
   );
