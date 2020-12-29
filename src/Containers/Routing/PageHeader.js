@@ -1,6 +1,13 @@
 import React from 'react';
 import { Box, Header, Nav, Select, Text } from 'grommet';
-import { DocumentStore, GraphQl, Group, Reactjs, Tools } from 'grommet-icons';
+import {
+  CloudSoftware,
+  DocumentStore,
+  GraphQl,
+  Group,
+  Reactjs,
+  Tools,
+} from 'grommet-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setNewTheme } from '../../redux/actions';
@@ -14,6 +21,11 @@ const links = [
   { label: 'Fetch Data', to: '/api', icon: <DocumentStore color="accent-2" /> },
   { label: 'Redux Toolkit', to: '/toolkit', icon: <Tools color="accent-2" /> },
   { label: 'React Query', to: '/rquery', icon: <GraphQl color="accent-2" /> },
+  {
+    label: 'Contentful',
+    to: '/contentful',
+    icon: <CloudSoftware color="accent-2" />,
+  },
 ];
 
 function PageHeader(props) {
