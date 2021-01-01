@@ -6,21 +6,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import QueryProvider from './queryClient/QueryProvider';
+import AuthProvider from './auth0/AuthProvider';
 
-// ReactDOM.render(
-//   <div>
-//     <h1>HOLA MUNDO</h1>
-//     <p>Hola amigos</p>
-//   </div>,
-//   document.getElementById('main-app')
-// );
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <QueryProvider>
-        <App />
-      </QueryProvider>
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <QueryProvider>
+          <App />
+        </QueryProvider>
+      </Provider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

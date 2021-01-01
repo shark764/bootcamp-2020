@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Login from '../../auth0/Login';
 import APIFetching from '../APIFetching';
 import ContentfulExample from '../ContentfulExample';
 import ContentfulMoviesExample from '../ContentfulMoviesExample';
@@ -9,7 +10,7 @@ import Lifecycle from '../Lifecycle';
 import ReactQueryExample from '../ReactQueryExample';
 import ReduxToolkitExample from '../ReduxToolkitExample';
 import UsersExample from '../UsersExample';
-import Menu from './Menu';
+import PrivateRoute from './PrivateRoute';
 
 function Routing() {
   return (
@@ -26,20 +27,23 @@ function Routing() {
       <Route path="/users">
         <UsersExample />
       </Route>
-      <Route path="/api">
+      <PrivateRoute path="/api">
         <APIFetching />
-      </Route>
-      <Route path="/toolkit">
+      </PrivateRoute>
+      <PrivateRoute path="/toolkit">
         <ReduxToolkitExample />
-      </Route>
-      <Route path="/rquery">
+      </PrivateRoute>
+      <PrivateRoute path="/rquery">
         <ReactQueryExample />
-      </Route>
-      <Route path="/contentful">
+      </PrivateRoute>
+      <PrivateRoute path="/contentful">
         <ContentfulExample />
-      </Route>
-      <Route path="/movies">
+      </PrivateRoute>
+      <PrivateRoute path="/movies">
         <ContentfulMoviesExample />
+      </PrivateRoute>
+      <Route path="/login">
+        <Login />
       </Route>
     </Switch>
   );
